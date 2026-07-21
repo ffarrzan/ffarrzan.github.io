@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Farzan Karimi-Malekabadi</title>
+<meta name="description" content="Farzan Karimi-Malekabadi — computational social psychologist. Moral cognition, cultural evolution, and human–AI reasoning." />
+
+<!-- ============================================================
+     EDITING NOTES (delete this comment before publishing if you like)
+     1. PHOTO: add a file named  profile.jpg  next to this index.html.
+        If it's missing, a clean "FKM" placeholder shows instead.
+     2. Fill in the two placeholder URLs marked  REPLACE-ME  below
+        (Google Scholar + LinkedIn).
+     3. CODE links: featured papers have a "Code" link set to "#".
+        Paste your GitHub repo URLs where you see  href="#"  <!-- code -->
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --paper:#F4F3EF;
+    --paper-2:#EFEEE9;
+    --ink:#17171B;
+    --muted:#63636B;
+    --line:#DCDBD4;
+    --accent:#1D3A5F;
+    --accent-2:#2E5A8C;
+    --accent-soft:rgba(29,58,95,.07);
+    --measure:66ch;
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .wrap{max-width:940px;margin:0 auto;padding:0 28px;}
+
+  a{color:var(--accent);text-decoration:none;}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+
+  /* ---------- eyebrow / labels ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 18px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:76px 0 52px;position:relative;overflow:hidden;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:44px;
+    align-items:center;
+  }
+  .name{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(2.6rem,6.5vw,4.4rem);
+    line-height:1.02;
+    letter-spacing:-.015em;
+    margin:0 0 16px;
+  }
+  .tagline{
+    font-size:1.12rem;
+    color:var(--muted);
+    max-width:34ch;
+    margin:0 0 26px;
+  }
+  .tagline em{font-family:var(--serif);font-style:italic;color:var(--ink);}
+
+  .contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 12px;
+    align-items:center;
+    font-family:var(--mono);
+    font-size:13px;
+    list-style:none;padding:0;margin:0;
+  }
+  .contact li{display:flex;align-items:center;gap:12px;}
+  .contact li::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--line);}
+  .contact li:last-child::after{display:none;}
+  .contact a{border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color .15s;}
+  .contact a:hover{border-color:var(--accent);}
+
+  .status{
+    display:inline-block;
+    margin-top:22px;
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:.06em;
+    color:var(--muted);
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:5px 12px;
+  }
+
+  /* avatar */
+  .avatar{width:150px;height:150px;flex:0 0 auto;position:relative;}
+  .avatar img,.avatar .fallback{
+    width:100%;height:100%;
+    border-radius:14px;
+    object-fit:cover;
+    display:block;
+    box-shadow:0 1px 0 rgba(0,0,0,.04),0 14px 32px -18px rgba(23,23,27,.4);
+  }
+  .avatar .fallback{
+    display:none;
+    align-items:center;justify-content:center;
+    background:linear-gradient(160deg,var(--accent),#12263f);
+    color:#F4F3EF;
+    font-family:var(--serif);font-weight:500;font-size:2.6rem;letter-spacing:.02em;
+  }
+
+  /* signature: logistic (IRT-style) curve, sits faintly behind the name */
+  .curve{
+    position:absolute;
+    right:-40px;top:8px;
+    width:min(520px,58%);
+    height:auto;
+    z-index:0;
+    opacity:.9;
+    pointer-events:none;
+  }
+  .hero-grid,.hero .eyebrow{position:relative;z-index:1;}
+
+  /* ---------- section frame ---------- */
+  section{padding:56px 0;border-top:1px solid var(--line);}
+  .sec-head{
+    display:flex;align-items:baseline;gap:14px;margin:0 0 30px;
+  }
+  .sec-head h2{
+    font-family:var(--serif);font-weight:500;
+    font-size:1.7rem;letter-spacing:-.01em;margin:0;
+  }
+  .sec-head .count{font-family:var(--mono);font-size:12px;color:var(--muted);}
+
+  /* ---------- about ---------- */
+  .prose p{max-width:var(--measure);margin:0 0 18px;}
+  .prose p:last-child{margin-bottom:0;}
+  .prose .lead{font-size:1.16rem;}
+  .prose em{font-family:var(--serif);font-style:italic;}
+
+  /* ---------- featured work ---------- */
+  .work{display:grid;gap:34px;}
+  .item{display:grid;grid-template-columns:132px 1fr;gap:20px;}
+  .item .meta{
+    font-family:var(--mono);font-size:12px;line-height:1.5;color:var(--muted);
+    padding-top:4px;
+  }
+  .item .meta .yr{color:var(--ink);}
+  .item .venue{display:block;margin-top:4px;}
+  .item h3{
+    font-family:var(--serif);font-weight:500;font-size:1.28rem;
+    line-height:1.28;margin:0 0 8px;letter-spacing:-.005em;
+  }
+  .item p{max-width:60ch;margin:0 0 12px;color:#2b2b31;}
+  .links{display:flex;gap:8px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;}
+  .links a{
+    border:1px solid var(--line);
+    border-radius:7px;
+    padding:5px 11px;
+    background:transparent;
+    transition:background .15s,border-color .15s,color .15s;
+  }
+  .links a:hover{background:var(--accent);border-color:var(--accent);color:var(--paper);}
+  .links a[href="#"]{color:var(--muted);border-style:dashed;} /* code placeholder */
+  .links a[href="#"]::after{content:" ·edit";opacity:.6;}
+
+  /* ---------- full publication list ---------- */
+  .pubs{list-style:none;margin:0;padding:0;counter-reset:pub;}
+  .pubs li{
+    display:grid;grid-template-columns:34px 1fr;gap:16px;
+    padding:15px 0;border-bottom:1px solid var(--line);
+  }
+  .pubs li:last-child{border-bottom:0;}
+  .pubs li::before{
+    counter-increment:pub;content:counter(pub,decimal-leading-zero);
+    font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:3px;
+  }
+  .pubs .t{margin:0;line-height:1.45;}
+  .pubs .t a{border-bottom:1px solid transparent;transition:border-color .15s;}
+  .pubs .t a:hover{border-color:var(--accent);}
+  .pubs .v{
+    display:block;font-family:var(--mono);font-size:11.5px;
+    color:var(--muted);margin-top:4px;letter-spacing:.02em;
+  }
+
+  /* ---------- footer ---------- */
+  footer{padding:40px 0 60px;border-top:1px solid var(--line);}
+  .foot{
+    display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;justify-content:space-between;
+    font-family:var(--mono);font-size:12px;color:var(--muted);
+  }
+  .foot a{border-bottom:1px solid transparent;}
+  .foot a:hover{border-color:var(--accent);}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:720px){
+    body{font-size:16px;}
+    .hero{padding:52px 0 40px;}
+    .hero-grid{grid-template-columns:1fr;gap:26px;}
+    .avatar{width:104px;height:104px;order:-1;}
+    .curve{width:80%;right:-30px;top:auto;bottom:-10px;opacity:.55;}
+    .item{grid-template-columns:1fr;gap:8px;}
+    .item .meta{padding-top:0;}
+    .item .venue{display:inline;margin-left:8px;}
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(10px);animation:rise .7s ease forwards;}
+    .reveal.d1{animation-delay:.06s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.18s}
+    @keyframes rise{to{opacity:1;transform:none;}}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+
+    <!-- signature: a faint logistic / item-response curve -->
+    <svg class="curve" viewBox="0 0 600 220" fill="none" aria-hidden="true">
+      <line x1="24" y1="188" x2="576" y2="188" stroke="var(--line)" stroke-width="1"/>
+      <line x1="60" y1="184" x2="60" y2="192" stroke="var(--line)" stroke-width="1"/>
+      <line x1="300" y1="182" x2="300" y2="194" stroke="var(--line)" stroke-width="1"/>
+      <line x1="540" y1="184" x2="540" y2="192" stroke="var(--line)" stroke-width="1"/>
+      <path d="M24 182 C 170 182, 236 176, 300 104 C 364 32, 430 26, 576 26"
+            stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="300" cy="104" r="4" fill="var(--accent)" opacity="0.7"/>
+      <text x="24" y="208" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--muted)">0</text>
+      <text x="566" y="208" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--muted)">1</text>
+    </svg>
+
+    <p class="eyebrow reveal">Computational Social Psychology · Human–AI Reasoning</p>
+
+    <div class="hero-grid">
+      <div>
+        <h1 class="name reveal d1">Farzan<br>Karimi-Malekabadi</h1>
+        <p class="tagline reveal d2">I study how moral and cultural systems form and change — in <em>people</em>, and now in <em>machines</em>.</p>
+        <ul class="contact reveal d2">
+          <li><a href="mailto:karimima@usc.edu">karimima@usc.edu</a></li>
+          <!-- REPLACE-ME: paste your Google Scholar profile URL -->
+          <li><a href="#" target="_blank" rel="noopener">Google Scholar</a></li>
+          <!-- REPLACE-ME: paste your LinkedIn URL -->
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+        <span class="status reveal d3">U.S. Permanent Resident · Green Card holder</span>
+      </div>
+
+      <div class="avatar reveal d1">
+        <img src="profile.jpg" alt="Farzan Karimi-Malekabadi"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="fallback">FKM</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head"><h2>About</h2></div>
+      <div class="prose">
+        <p class="lead">Farzan Karimi-Malekabadi is a computational social psychologist. He recently completed his Ph.D. in Social Psychology at the University of Southern California, building on an earlier background in engineering. His research asks how moral and cultural systems form, vary, and change across people and places — and, increasingly, how large language models reason about those same moral and cultural questions.</p>
+        <p>Methodologically he works across causal inference, Bayesian and multilevel modeling, psychometrics (CTT/IRT, EFA/CFA/SEM), and NLP, often on large cross-cultural datasets with hundreds of thousands of participants. Alongside his academic work he has applied these methods in industry — as a Quantitative User Research intern at Google and a Research Scientist at Edmentum — designing evaluations for agentic AI products and building pipelines that benchmark and improve LLM-generated content. What ties it together is a commitment to <em>careful measurement</em>: turning fuzzy human constructs into things that can be estimated, tested, and trusted.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SELECTED WORK ================= -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head"><h2>Selected work</h2><span class="count">six of twenty-two</span></div>
+      <div class="work">
+
+        <article class="item">
+          <div class="meta"><span class="yr">2026</span><span class="venue">arXiv · preprint</span></div>
+          <div>
+            <h3>Theory Trace Card: Theory-Driven Socio-Cognitive Evaluation of LLMs</h3>
+            <p>A framework for evaluating language models against psychological theory rather than surface benchmarks — tracing model behavior back to the socio-cognitive constructs it's meant to reflect.</p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2601.01878" target="_blank" rel="noopener">Paper →</a>
+              <a href="#" target="_blank" rel="noopener"><!-- code -->Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="meta"><span class="yr">2026</span><span class="venue">arXiv · preprint</span></div>
+          <div>
+            <h3>Tracing Moral Foundations in Large Language Models</h3>
+            <p>Investigates whether the moral foundations studied in humans emerge inside large language models, and how they can be located and measured within a model's internal reasoning.</p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2601.05437" target="_blank" rel="noopener">Paper →</a>
+              <a href="#" target="_blank" rel="noopener"><!-- code -->Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="meta"><span class="yr">in&nbsp;press</span><span class="venue">Nature Human Behaviour</span></div>
+          <div>
+            <h3>The Shrinking Landscape of Linguistic Diversity in the Age of LLMs</h3>
+            <p>Examines how widespread reliance on language models may be quietly narrowing the diversity of human language — a large-scale look at homogenization as a side effect of AI use.</p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2502.11266" target="_blank" rel="noopener">Paper →</a>
+              <a href="#" target="_blank" rel="noopener"><!-- code -->Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="meta"><span class="yr">2025</span><span class="venue">arXiv · preprint</span></div>
+          <div>
+            <h3>Realistic Threat Perception Drives Intergroup Conflict</h3>
+            <p>A causal, dynamic analysis of how perceived threat escalates intergroup conflict — using generative-agent simulations to model the process as it unfolds over time.</p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2512.17066" target="_blank" rel="noopener">Paper →</a>
+              <a href="#" target="_blank" rel="noopener"><!-- code -->Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="meta"><span class="yr">2025</span><span class="venue">arXiv · preprint</span></div>
+          <div>
+            <h3>Reasoning on a Spectrum: Aligning LLMs to System 1 and System 2 Thinking</h3>
+            <p>Treats reasoning style as something that can be tuned, aligning language models along the spectrum from fast, intuitive (System 1) to slow, deliberate (System 2) thinking.</p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2502.12470" target="_blank" rel="noopener">Paper →</a>
+              <a href="#" target="_blank" rel="noopener"><!-- code -->Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="meta"><span class="yr">2025</span><span class="venue">PNAS Nexus</span></div>
+          <div>
+            <h3>A Value-Based Topography of Climate Change Beliefs and Behaviors</h3>
+            <p>Maps how core human values organize the landscape of climate beliefs and behaviors, giving a value-centered account of why people respond to climate change so differently.</p>
+            <div class="links">
+              <a href="https://doi.org/10.1093/pnasnexus/pgae590" target="_blank" rel="noopener">Paper →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ALL PUBLICATIONS ================= -->
+  <section id="publications">
+    <div class="wrap">
+      <div class="sec-head"><h2>Publications &amp; preprints</h2><span class="count">2019 — 2026</span></div>
+      <ol class="pubs">
+
+        <li><div class="t"><a href="https://arxiv.org/abs/2601.01878" target="_blank" rel="noopener">Theory Trace Card: Theory-Driven Socio-Cognitive Evaluation of LLMs</a><span class="v">Karimi-Malekabadi, Abdurahman, Sourati, Trager &amp; Dehghani · arXiv 2026</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.31234/osf.io/cyqs7_v1" target="_blank" rel="noopener">Scaling Item-to-Standard Alignment with Large Language Models: Accuracy, Limits, and Solutions</a><span class="v">Karimi-Malekabadi, Razavi &amp; Powers · PsyArXiv 2025</span></div></li>
+
+        <li><div class="t"><a href="https://arxiv.org/abs/2512.17066" target="_blank" rel="noopener">Realistic Threat Perception Drives Intergroup Conflict: A Causal, Dynamic Analysis Using Generative-Agent Simulations</a><span class="v">Abdurahman, Karimi-Malekabadi, Yu, Kteily &amp; Dehghani · arXiv 2025</span></div></li>
+
+        <li><div class="t"><a href="https://arxiv.org/abs/2601.05437" target="_blank" rel="noopener">Tracing Moral Foundations in Large Language Models</a><span class="v">Yu, Yi, Karimi-Malekabadi, Abdurahman, Ye, Narayanan &amp; Dehghani · arXiv 2026</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.31234/osf.io/8yzh6_v1" target="_blank" rel="noopener">The Power of Social Media Bios: How Common Profile Content Unintentionally Signals Political Ideology and Shapes Prejudice</a><span class="v">Trager, Karimi-Malekabadi, Abdurahman, Daryani &amp; Dehghani · OSF Preprints 2026</span></div></li>
+
+        <li><div class="t"><a href="https://arxiv.org/abs/2502.12470" target="_blank" rel="noopener">Reasoning on a Spectrum: Aligning LLMs to System 1 and System 2 Thinking</a><span class="v">Ziabari, Ghazizadeh, Sourati, Karimi-Malekabadi, Piray &amp; Dehghani · arXiv 2025</span></div></li>
+
+        <li><div class="t"><a href="https://arxiv.org/abs/2502.11266" target="_blank" rel="noopener">The Shrinking Landscape of Linguistic Diversity in the Age of Large Language Models</a><span class="v">Sourati, Karimi-Malekabadi, Ozcan, McDaniel, Ziabari &amp; Dehghani · Nature Human Behaviour, in press</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.31234/osf.io/d695y" target="_blank" rel="noopener">Perils and Opportunities in Using Large Language Models in Psychological Research</a><span class="v">Abdurahman, Atari, Karimi-Malekabadi, Xue, Trager, Park &amp; Dehghani · PNAS Nexus 2024</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.31219/osf.io/n6v74_v1" target="_blank" rel="noopener">Costly Morality Theory of Honor: An Evolutionary, Culture-as-Situated-Cognition Perspective</a><span class="v">Karimi-Malekabadi &amp; Oyserman · Personality and Social Psychology Review 2025</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.1093/pnasnexus/pgae590" target="_blank" rel="noopener">A Value-Based Topography of Climate Change Beliefs and Behaviors</a><span class="v">Karimi-Malekabadi, Sachdeva &amp; Dehghani · PNAS Nexus 2025</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.31234/osf.io/xvdep_v1" target="_blank" rel="noopener">Revisiting National Nostalgia: Make America Moral Again!</a><span class="v">Karimi-Malekabadi, Ziabari &amp; Dehghani · PsyArXiv 2025</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.21203/rs.3.rs-4110737/v1" target="_blank" rel="noopener">What Doesn't Kill Us: Harsh Ecologies Beget Difficulty-as-Improvement Norms</a><span class="v">Karimi-Malekabadi, Oyserman, Ziabari &amp; Omrani · Preprint 2024</span></div></li>
+
+        <li><div class="t"><a href="https://aclanthology.org/events/emnlp-2025/" target="_blank" rel="noopener">MFTCXplain: A Multilingual Benchmark Dataset for Evaluating the Moral Reasoning of LLMs through Hate Speech Multi-hop Explanation</a><span class="v">Trager, Vargas, Alves, Guida, Ngueajio &amp; Karimi-Malekabadi · Findings of ACL: EMNLP 2025</span></div></li>
+
+        <li><div class="t"><a href="https://arxiv.org/abs/2208.05545" target="_blank" rel="noopener">The Moral Foundations Reddit Corpus</a><span class="v">Trager, Ziabari, Davani, Golazizian, Karimi-Malekabadi &amp; Dehghani · LREC 2026</span></div></li>
+
+        <li><div class="t"><a href="https://osf.io/download/5muq7" target="_blank" rel="noopener">Hate Is Justified When Values Are Threatened: Evidence from Ideologically Threatening Tweets and Real-World Events</a><span class="v">Trager, Karimi-Malekabadi, Abdurahman &amp; Dehghani · PLOS ONE, in press</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.1177/08862605221101184" target="_blank" rel="noopener">Qeirat Values and Victim Blaming in Iran: The Mediating Effect of Culture-Specific Gender Roles</a><span class="v">Karimi-Malekabadi &amp; Falahatpishe Baboli · Journal of Interpersonal Violence 2022</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.1037/amp0001020" target="_blank" rel="noopener">Moral Values Predict County-Level COVID-19 Vaccination Rates in the United States</a><span class="v">Reimer, Atari, Karimi-Malekabadi, Trager, Kennedy, Graham &amp; Dehghani · American Psychologist 2022</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.1038/s41562-022-01319-5" target="_blank" rel="noopener">Situational Factors Shape Moral Judgements in the Trolley Dilemma in Eastern, Southern and Western Countries</a><span class="v">Bago, Kovacs, Protzko, Nagy … Karimi-Malekabadi et al. · Nature Human Behaviour 2022</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.1016/j.cresp.2022.100060" target="_blank" rel="noopener">Pathogens Are Linked to Human Moral Systems Across Time and Space</a><span class="v">Atari, Reimer, Graham, Hoover, Kennedy, Davani, Karimi-Malekabadi &amp; Dehghani · Current Research in Ecological and Social Psychology 2022</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.1016/j.paid.2019.05.059" target="_blank" rel="noopener">Religiosity, Intrasexual Rivalry, and Mate Retention Behaviors in Iran</a><span class="v">Karimi-Malekabadi &amp; Esmaeilinasab · Personality and Individual Differences 2019</span></div></li>
+
+        <li><div class="t"><a href="https://www.guilford.com/" target="_blank" rel="noopener">Mobile Sensing Applications in Moral Psychology</a><span class="v">Karimi-Malekabadi, Atari &amp; Dehghani · in Mobile Sensing in Psychology (Guilford Press) 2024</span></div></li>
+
+        <li><div class="t"><a href="https://doi.org/10.1007/s40806-018-00185-7" target="_blank" rel="noopener">Theory-Driven Assessment of Intrasexual Rivalry</a><span class="v">Karimi-Malekabadi, Ghanbarian, Afhami &amp; Chegeni · Evolutionary Psychological Science 2019</span></div></li>
+
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr"></span> Farzan Karimi-Malekabadi</span>
+    <span><a href="mailto:karimima@usc.edu">karimima@usc.edu</a> · <a href="#" target="_blank" rel="noopener">Scholar</a> · <a href="#" target="_blank" rel="noopener">LinkedIn</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
